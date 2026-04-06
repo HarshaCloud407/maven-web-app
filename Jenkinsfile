@@ -17,7 +17,7 @@ pipeline {
         }
         stage('docker image'){
             steps {
-                sh 'docker build -t hariprasad123456/mavenwebapp .'
+                sh 'docker build -t ashokit/mavenwebapp .'
             }
         }
         stage('k8s deploy'){
