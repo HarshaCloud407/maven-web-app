@@ -1,4 +1,9 @@
-FROM tomcat:latest
-MAINTAINER Ashok <ashok@oracle.coms>
+FROM tomcat:9-jdk17
+
+WORKDIR /usr/local/tomcat/webapps
+
+COPY target/maven-web-app.war ROOT.war
+
 EXPOSE 8080
-COPY target/maven-web-app.war /usr/local/tomcat/webapps/maven-web-app.war
+
+CMD ["catalina.sh","run"]
